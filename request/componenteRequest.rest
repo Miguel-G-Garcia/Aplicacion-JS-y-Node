@@ -1,0 +1,22 @@
+GET http://localhost:3000/api/clients
+
+###
+
+GET http://localhost:3000/api/clients?listado=true
+
+
+### 
+
+GET http://localhost:3000/api/clients/2?relations=true
+
+###
+POST http://localhost:3000/api/clients
+Content-Type: application/json
+
+{
+    "client_id":3,
+    "client_name":"Pepe",
+    "address":"calle Botijo 1",
+    "phone_number":879453162,
+    "gmail":"ElBotijo@gmail.com"
+}

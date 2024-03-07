@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+	<title>Hotele Questo Rico</title>
+</head>
+
+<body>
+
+	<!-- Barra de navegación -->
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
+		<div class="container-fluid px-5">
+			<a class="navbar-brand text-light" aria-current="page" id="mnuLandPage">Home</a>
+			<button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							Clientes
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" id="mnuFormClient">Crear Cliente</a></li>
+
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+
+							<li><a class="dropdown-item" href="#" id="mnuListCLients">Lista Clietes</a></li>
+							<li><a class="dropdown-item" href="#" id="mnuFindClient">Buscar Cliente por id</a>
+							</li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">
+							Reservas
+						</a>
+						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="#" id="mnuFormReservation">Reservar Habitacion</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+
+							<li><a class="dropdown-item" href="#" id="mnuListReservations">Listado de Reservas</a></li>
+							<li><a class="dropdown-item" href="#" id="mnuFindReservation">Buscar Reserva por id</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- LANDPAGE -->
+
+
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+		<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+			<div class="toast-header">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+					class="bi bi-house-gear me-1" viewBox="0 0 16 16">
+					<path
+						d="M7.293 1.5a1 1 0 0 1 1.414 0L11 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l2.354 2.353a.5.5 0 0 1-.708.708L8 2.207l-5 5V13.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 2 13.5V8.207l-.646.647a.5.5 0 1 1-.708-.708z" />
+					<path
+						d="M11.886 9.46c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.044c-.613-.181-.613-1.049 0-1.23l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+				</svg>
+				<strong class="me-auto">Mensaje</strong>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			</div>
+			<div class="toast-body" id="Notification">
+				Your message here
+			</div>
+		</div>
+	</div>
+
+	<div id="landPage" style="display: block;">
+
+		<div id="portrait-bakcground">
+			<div class="shadowy-text">
+				<h1>Hotel QueEsTo Rico</h1>
+				<p>El mejor hotel a los pies del mar.</p>
+			</div>
+
+		</div>
+
+		<div class="container mt-5 mb-5 text-center">
+
+			<h1>Hotel QueEsTo Rico</h1>
+			<h3>Hotel Questo Rico es un hotel de lujo situado a los pies de el mar de Madrid. Fundado por William Afton
+				en
+				<strong data-bs-toggle="tooltip"
+					data-bs-title="no hay relaciones con ningun evento tragico en ese tiempo">1987
+				</strong>
+				un hombre con una pasion por conseguir la alegria de todos, tanto de adultos como niños.
+				El lema de nuestro hotel es "Bueno Y Bonito, por que de Barato nada"
+			</h3>
+
+		</div>
+		<div class="container mt-5 mb-5 text-center">
+
+			<h1>Zona tranquila y pacifica</h1>
+			<h3>Dormiran muy placidamente sabiendo que se hospedaran en la ciudad mas tranquila de cualquier playa de
+				madrid,
+				<strong>SILENT HILL</strong>.
+				La calma se huele en el aire y las noches mas bellas que te dejaran sin dormir solo para gozar de ellas,
+				fauna tan amigable que ni se alejan de ti ,ES MÁS, corren para saludarete. Incluso el mar es amistoso,
+				0 porcentaje de medusas en los ultimos 3 años y tiburones tan dociles que podrias acariciarlos.
+			</h3>
+			<div class="alert alert-danger d-flex align-items-center" role="alert" style="size: 10px;">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+					class="bi bi-exclamation-triangle-fill mx-auto" viewBox="0 0 16 16">
+					<path
+						d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5m.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+				</svg>
+				<div class="mx-auto">
+					ADVERTENCIA: bajo ninguna costa se acerque a un tiburon, si le atacar algun tiburon en su tiempo en
+					nuestra
+					estancia
+					no estaremos a cargo.
+				</div>
+			</div>
+		</div>
+
+
+		<div id="carouselid" class="carousel slide carousel-fade my-3">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselid" data-bs-slide-to="0" class="active"
+					aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselid" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselid" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="css/piscina.jpg" class="d-block w-100 h-100 ">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="shadowy-text">piscinas y yacusis</h3>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="css/zona_infantil.jpg" class="d-block w-100 h-100 ">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="shadowy-text">Zona de juegos para niños</h3>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="css/spa.jpg" class="d-block w-100 h-100">
+					<div class="carousel-caption d-none d-md-block">
+						<h3 class="shadowy-text">Spa y masaje inlcuido</h3>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselid" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselid" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+
+		<div class="row row-cols-1 row-cols-xxl-2 g-4 my-2 d-flex align-items-center justify-content-center">
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_sin_foto.jpg" class=" mx-2 my-2">
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h3 class="card-title">4/5</h3>
+								<h4 class="card-text">Esta bien pero me hubiera gustado que estuviera en un sitio con
+									mas lugares
+									interesantes.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_james.jpg" class=" mx-2 my-2"><!-- imagen del prota de silent hill -->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">1/5</h2>
+								<h4 class="card-text">Page para estar unas 2 semanas y estuvo todo el pueblo con niebla
+									densa.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_flor.jpg" class=" mx-2 my-2"><!--foto de unas flores-->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">5/5</h2>
+								<h4 class="card-text">Es fenomenal, aun que estaba caro...</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row row-cols-1 row-cols-xxl-2 g-4 my-2 d-flex align-items-center justify-content-center">
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_piramid.jpg" class=" mx-2 my-2"><!--piramid head-->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">3/5</h2>
+								<h4 class="card-text">Me encanta el ambiente y la niebla del lugar.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_elon.jpg"
+								class=" mx-2 my-2"><!-- elon musk diciendo que tendria que llamarse hotel X -->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">2/5</h2>
+								<h4 class="card-text">Deberian de haberlo llamado Hotel X.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_soyYo.png" class=" mx-2 my-2"><!--soy yo :D-->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">6/9</h2>
+								<h4 class="card-text">Ta chulo.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row row-cols-1 row-cols-xxl-2 g-4 my-2 d-flex align-items-center justify-content-center">
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_mono.jpg"
+								class=" mx-2 my-2"><!--poner al mono y que puntue sobre platanos-->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">0/5</h2>
+								<h4 class="card-text">uh uh uh ah AH HA UH AH AH..... uh.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card mb-3 mx-5" style="max-width: 800px;">
+					<div class="row g-0">
+						<div class="col-sm-3">
+							<img src="css/pfp/pfp_fnaf.png" class=" mx-2 my-2"><!--freddy diciendo har har harhar-->
+						</div>
+						<div class="col-sm-8">
+							<div class="card-body">
+								<h2 class="card-title">6/5</h2>
+								<h4 class="card-text">har har har harhar har har haar har haaarrrr.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FORMULARIO DE CLIENTE -->
+	<form class="form-horizontal mx-5 mt-5 p-2" name="frmNewClient" id="frmNewClient" style="display: none;">
+		<fieldset>
+			<legend>Alta de cliente</legend>
+
+			<div class="form-group">
+				<label for="txtClientName">Nombre Cliente</label>
+				<input id="txtClientName" name="txtClientName" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtAddress">Address</label>
+				<input id="txtAddress" name="txtAddress" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtPhone">Telefono</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">+34</div>
+					</div>
+					<input id="txtPhone" name="txtPhone" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtGmail">Correo Electronico</label>
+				<div class="input-group">
+					<input id="txtGmail" name="txtGmail" placeholder="correoelectronico@gmail.com" type="text"
+						class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<input name="btnAddClient" id="btnAddClient" type="button" class="btn btn-success" value="Aceptar" />
+			</div>
+			</fieldset>
+	</form>
+
+
+	<!-- FORMULARIO DE RESERVA -->
+	<form class="form-horizontal  mx-5 mt-5 p-2" name="frmNewReservation" id="frmNewReservation" style="display: none;">
+		<fieldset>
+			<legend>Alta de Reseva</legend>
+
+			<div class="form-group">
+				<label for="txtClientId">ID Cliente</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-address-card"></i>
+						</div>
+					</div>
+					<input id="txtClientId" name="txtClientId" type="text" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCheckIn">Check In</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-calendar-plus-o"></i>
+						</div>
+					</div>
+					<input id="txtCheckIn" name="txtCheckIn" type="date" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCheckOut">Check Out</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-calendar-minus-o"></i>
+						</div>
+					</div>
+					<input id="txtCheckOut" name="txtCheckOut" type="date" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtRoomNmb">Room Nº</label>
+				<input id="txtRoomNmb" name="txtRoomNmb" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<input name="btnMakeReservation" id="btnMakeReservation" type="button" class="btn btn-success"
+					value="Aceptar" />
+			</div>
+			</fieldset>
+	</form>
+
+
+	<!-- FORMULARIO EDITAR CLIENTE -->
+	<form class="form-horizontal mx-5 mt-5 p-2" name="frmEditClient" id="frmEditClient" style="display: none;">
+		<fieldset>
+			<legend>Modificar cliente</legend>
+
+			<div class="form-group">
+				<label for="txtClientId">ID Cliente</label>
+				<input disabled id="txtClientId" name="txtClientId" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtClientName">Nombre Cliente</label>
+				<input id="txtClientName" name="txtClientName" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtAddress">Address</label>
+				<input id="txtAddress" name="txtAddress" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtPhone">Telefono</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">+34</div>
+					</div>
+					<input id="txtPhone" name="txtPhone" type="text" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtGmail">Correo Electronico</label>
+				<div class="input-group">
+					<input id="txtGmail" name="txtGmail" placeholder="correoelectronico" type="text"
+						class="form-control">
+					<div class="input-group-append">
+						<div class="input-group-text">@gmail.com</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input name="btnEditClient" id="btnEditClient" type="button" class="btn btn-success" value="Aceptar" />
+			</div>
+		</fieldset>
+	</form>
+
+	<!-- FORMULARIO EDITAR RESERVA -->
+	<form class="form-horizontal  mx-5 mt-5 p-2" name="frmEditReservation" id="frmEditReservation"
+		style="display: none;">
+		<fieldset>
+			<legend>Modificar Reseva</legend>
+			
+			<div class="form-group">
+				<label for="txtReservationId">Id Reserva</label>
+				<input disabled id="txtReservationId" name="txtReservationId" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="txtClientId">ID Cliente</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-address-card"></i>
+						</div>
+					</div>
+					<input id="txtClientId" name="txtClientId" type="text" required="required" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCheckIn">Check In</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-calendar-plus-o"></i>
+						</div>
+					</div>
+					<input id="txtCheckIn" name="txtCheckIn" type="date" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtCheckOut">Check Out</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<i class="fa fa-calendar-minus-o"></i>
+						</div>
+					</div>
+					<input id="txtCheckOut" name="txtCheckOut" type="date" class="form-control">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="txtRoomNmb">Room Nº</label>
+				<input id="txtRoomNmb" name="txtRoomNmb" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<input name="btnEditReservation" id="btnEditReservation" type="button" class="btn btn-success"
+					value="Aceptar" />
+			</div>
+		</fieldset>
+	</form>
+
+	<!-- FORMULARIO BUSCAR CLIENTE POR ID -->
+	<form class="form-horizontal  mx-5 mt-5 p-2" name="frmFindClient" id="frmFindClient"
+		style="display: none;">
+		<fieldset>
+			<legend>Buscar Cliente por ID</legend>
+			<div class="form-group">
+				<label for="txtClientId">Id Client</label>
+				<input id="txtClientId" name="txtClientId" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<input name="btnFindClient" id="btnFindClient" type="button" class="btn btn-success"
+					value="Aceptar" />
+			</div>
+		</fieldset>
+	</form>
+	
+	<!-- FORMULARIO BUSCAR RESERVA POR ID -->
+	<form class="form-horizontal  mx-5 mt-5 p-2" name="frmFindReservation" id="frmFindReservation"
+		style="display: none;">
+		<fieldset>
+			<legend>Buscar Reserva por Id</legend>
+			<div class="form-group">
+				<label for="txtReservationId">Id Reserva</label>
+				<input id="txtReservationId" name="txtReservationId" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<input name="btnFindReservation" id="btnFindReservation" type="button" class="btn btn-success"
+					value="Aceptar" />
+			</div>
+		</fieldset>
+	</form>
+
+	<!-- LISTADO DE DATOS -->
+	<div id="dataList" class="container-fluid mt-5" style="display: none;">
+	</div>
+
+	<footer class="fixed-bottom">
+		&copy; 2023 Hotel Questa Rico - Todos los derechos reservados
+	</footer>
+
+	<!--ENLACE A LOS ARCHIVOS JS/CSS-->
+	<link rel="stylesheet" href="css/Css.css">
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/objeto.js"></script>
+	<script type="text/javascript" src="js/codigo.js"></script>
+</body>
+
+</html>

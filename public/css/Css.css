@@ -1,0 +1,99 @@
+#myCarousel {
+  width: 75%;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('fonts/RobotoSlab-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+#contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Ajusta la altura según tus necesidades */
+}
+
+#portrait-bakcground {
+  background-image: url("./portada.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  /* Altura de la sección con la imagen de fondo */
+  color: #fff;
+  /* Color del texto */
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.input-group-text{
+  height: 37.6px;
+}
+form > *{
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.shadowy-text{
+
+  font-size: 24px;
+  color: #fff;
+  /* Color del texto */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.5);
+  /* Desplazamiento X, Desplazamiento Y, Desenfoque, Color del sombreado */
+
+}
+.card{
+  max-width: 500px;
+}
+
+.card img{
+  border-radius: 50%;
+  max-width: 150px;
+  max-height: 150px;
+}
+#carouselid img{
+  height: 900px;
+}
+
+#mapa {
+  padding-top: 10%;
+  z-index: 0;
+  height: 20%;
+}
+
+#opiniones {
+  margin-top: 5%;
+}
+
+:root {
+  --bs-primary: #008585;
+  --bs-secondary: #3be3e3;
+  --bs-light: #9ad5ff;
+  --bs-dark: #003a3a;
+}
+
+.toast > *{
+  background-color: var(--bs-secondary);
+}
+.row{
+  max-width: 1500px;
+}
+
+.navbar-dark {
+  background-color: var(--bs-dark) !important;
+}
+
+body {
+  background-color: var(--bs-light);
+  font-family: 'Roboto Slab';
+}
+
+.card {
+  background-color: var(--bs-secondary);
+
+}
+
